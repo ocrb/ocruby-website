@@ -3,6 +3,10 @@ require File.expand_path(File.dirname(__FILE__) + "/../config/boot")
 require File.join(File.dirname(__FILE__),'blueprints')
 require 'riot/rr'
 
+DatabaseCleaner.strategy = :truncation
+
+Riot.pretty_dots
+
 # Specify your app using the #app helper inside a context.
 # Takes either an app class or a block argument.
 # app { Padrino.application }
@@ -32,5 +36,13 @@ class Riot::Context
   def app(app=nil, &block)
     setup { @app = (app || block.call) }
   end
+
+
+  # Purge the entire db on setup
+  #
+  def purge!
+    setup { DatabaseCleaner.clean }
+  end
+
 end
 
