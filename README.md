@@ -2,18 +2,12 @@
 
 # Components
 
-Mongoid
-
-Haml
-
-SCSS
-
-JQuery
-
-Riot
-
-RR
-
+* Mongoid
+* Haml
+* SCSS
+* JQuery
+* Riot
+* RR
 
 # Setup and Installation #
 
