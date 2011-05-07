@@ -44,3 +44,10 @@ to run the entire suite.
 To see other possible tasks run:
 
     $ padrino rake -T
+
+# Features / Work Assignments #
+
+Add your feature onto the issues for this project. If you want to own a
+feature, assign yourself the ticket. For general milestones we can
+discuss it or I can curate them into milestones I see appropriate for
+each successive release.
