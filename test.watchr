@@ -23,7 +23,7 @@ end
 
 def run_all_tests
   system('clear')
-  result = run "padrino rake test"
+  result = run "bundle exec padrino rake test"
   growl result.split("\n").last rescue nil
   puts result
 end
