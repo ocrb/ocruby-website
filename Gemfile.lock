@@ -49,6 +49,8 @@ GEM
     database_cleaner (0.6.7)
     diff-lcs (1.1.2)
     eventmachine (0.12.10)
+    faker (0.9.5)
+      i18n (~> 0.4)
     grit (2.4.1)
       diff-lcs (~> 1.1)
       mime-types (~> 1.15)
@@ -111,6 +113,7 @@ DEPENDENCIES
   bcrypt-ruby
   bson_ext
   database_cleaner
+  faker
   haml
   machinist
   machinist_mongo
