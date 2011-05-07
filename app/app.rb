@@ -3,9 +3,6 @@ class Web < Padrino::Application
   register Padrino::Mailer
   register Padrino::Helpers
 
-  set :session_secret, "1c5df853bc91b94ce058f75fca4aea173a043e77add365a7d7110552a46cc2ef"
-  set :sessions, true
-
   ##
   # Caching support
   #
