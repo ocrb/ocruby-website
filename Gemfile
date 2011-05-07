@@ -12,12 +12,15 @@ gem 'SystemTimer', :require => "system_timer"
 # Mongo
 gem 'mongoid', "2.0.0"
 gem 'bson_ext', :require => "mongo"
+# Authentication
+gem 'bcrypt-ruby', :require => 'bcrypt'
 
 # Test requirements
 
 group :test do
   gem 'machinist'
   gem 'machinist_mongo', :require => 'machinist/mongoid'
+  gem 'faker'
   gem 'rr'
   gem 'riot'
   gem 'riot-mongoid', "2.0.0.beta.rc.7"
