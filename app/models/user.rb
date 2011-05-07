@@ -3,10 +3,12 @@ class User
   include Mongoid::Timestamps
   include Users::Authentication
 
-  field :first_name, :type => String
-  field :last_name,  :type => String
-  field :username,   :type => String
-  field :email,      :type => String
+  field :first_name,  :type => String
+  field :last_name,   :type => String
+  field :username,    :type => String
+  field :email,       :type => String
+
+  field :description, :type => String
 
   validates_presence_of   :username
   validates_uniqueness_of :username, :case_sensitive => false

@@ -21,7 +21,7 @@ context "Users::Authentication" do
 
   context "on password mechanism" do
     setup do
-      User.create :password => 'password123', :password_confirmation => 'password123'
+      User.make :password => 'password123', :password_confirmation => 'password123'
       User.first
     end
 
@@ -47,7 +47,7 @@ context "Users::Authentication" do
 
   context "#authenticate" do
     setup do
-      User.create :username => 'johnny', :password => 'johnny123', :password_confirmation => 'johnny123'
+      User.make :username => 'johnny', :password => 'johnny123', :password_confirmation => 'johnny123'
     end
 
     asserts "#authenticate returns user if password match" do

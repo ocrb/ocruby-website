@@ -8,10 +8,12 @@ context "User Model" do
 
     asserts(:included_modules).includes Users::Authentication
 
-    asserts_topic.has_field :first_name, :type => String
-    asserts_topic.has_field :last_name,  :type => String
-    asserts_topic.has_field :username,   :type => String
-    asserts_topic.has_field :email,      :type => String
+    asserts_topic.has_field :first_name,  :type => String
+    asserts_topic.has_field :last_name,   :type => String
+    asserts_topic.has_field :username,    :type => String
+    asserts_topic.has_field :email,       :type => String
+
+    asserts_topic.has_field :description, :type => String
 
     asserts_topic.has_validation :validates_presence_of,   :username
     asserts_topic.has_validation :validates_uniqueness_of, :username, :case_sensitive => false
