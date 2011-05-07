@@ -6,8 +6,11 @@ context "User Model" do
   context "definition" do
     setup { User }
 
+    asserts(:included_modules).includes Users::Authentication
+
     asserts_topic.has_field :first_name, :type => String
-    asserts_topic.has_field :last_name, :type => String
-    asserts_topic.has_field :username, :type => String
+    asserts_topic.has_field :last_name,  :type => String
+    asserts_topic.has_field :username,   :type => String
+    asserts_topic.has_field :email,      :type => String
   end
 end

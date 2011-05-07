@@ -12,6 +12,8 @@ gem 'SystemTimer', :require => "system_timer"
 # Mongo
 gem 'mongoid', "2.0.0"
 gem 'bson_ext', :require => "mongo"
+# Authentication
+gem 'bcrypt-ruby', :require => 'bcrypt'
 
 # Test requirements
 
