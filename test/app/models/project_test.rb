@@ -12,5 +12,7 @@ context "Project Model" do
     asserts_topic.has_field :github_url,   :type => String
     asserts_topic.has_field :rubygems_url, :type => String
     asserts_topic.has_field :website_url,  :type => String
+
+    asserts_topic.has_association :referenced_in, :user
   end
 end

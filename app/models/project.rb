@@ -8,4 +8,6 @@ class Project
   field :github_url,   :type => String
   field :rubygems_url, :type => String
   field :website_url,  :type => String
+
+  referenced_in :user
 end
