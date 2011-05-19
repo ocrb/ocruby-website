@@ -24,5 +24,7 @@ context "User Model" do
     asserts_topic.has_validation :validates_uniqueness_of, :email,    :case_sensitive => false
     asserts_topic.has_validation :validates_format_of,     :email,    :with => %r{\w+@\w+\.\w+}
     asserts_topic.has_validation :validates_length_of,     :email,    :within => 4..320
+
+    asserts_topic.has_association :references_many, :projects
   end
 end

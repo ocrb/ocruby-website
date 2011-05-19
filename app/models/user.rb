@@ -19,4 +19,6 @@ class User
   validates_uniqueness_of :email,    :case_sensitive => false
   validates_format_of     :email,    :with => %r{\w+@\w+\.\w+}
   validates_length_of     :email,    :within => 4..320
+
+  references_many :projects
 end
