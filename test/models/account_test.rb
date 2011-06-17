@@ -1,4 +1,4 @@
-require File.expand_path(File.dirname(__FILE__) + '/../../test_config.rb')
+require File.expand_path(File.dirname(__FILE__) + '/../test_config.rb')
 
 context "Account Model" do
   context 'can be created' do
