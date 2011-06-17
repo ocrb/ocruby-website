@@ -7,6 +7,9 @@ DatabaseCleaner.strategy = :truncation
 
 Riot.pretty_dots
 
+# Support Files
+Dir.glob(File.expand_path('../support/*.rb',__FILE__)).each { |f| require f }
+
 # Specify your app using the #app helper inside a context.
 # Takes either an app class or a block argument.
 # app { Padrino.application }
@@ -36,13 +39,5 @@ class Riot::Context
   def app(app=nil, &block)
     setup { @app = (app || block.call) }
   end
-
-
-  # Purge the entire db on setup
-  #
-  def purge!
-    setup { DatabaseCleaner.clean }
-  end
-
 end
 

@@ -1,10 +1,12 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../test_config.rb')
 
 context "Project Model" do
-  purge!
+  set :clean_database, true
 
   context "definition" do
     setup { Project }
+
+    asserts(:included_modules).includes Mongoid::Timestamps
 
     asserts_topic.has_field :name,         :type => String
     asserts_topic.has_field :description,  :type => String

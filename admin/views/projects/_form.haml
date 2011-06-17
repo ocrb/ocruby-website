@@ -1,0 +1,52 @@
+.group
+  =f.label :name
+  =f.error_message_on :name
+  =f.text_field :name, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :website_url
+  =f.error_message_on :website_url
+  =f.text_field :website_url, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :_id
+  =f.error_message_on :_id
+  =f.text_field :_id, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :_type
+  =f.error_message_on :_type
+  =f.text_field :_type, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :user_id
+  =f.error_message_on :user_id
+  =f.text_field :user_id, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :rubygems_url
+  =f.error_message_on :rubygems_url
+  =f.text_field :rubygems_url, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :description
+  =f.error_message_on :description
+  =f.text_field :description, :class => :text_field
+  %span.description Ex: a simple text
+
+.group
+  =f.label :github_url
+  =f.error_message_on :github_url
+  =f.text_field :github_url, :class => :text_field
+  %span.description Ex: a simple text
+
+
+.group.navform.wat-cf
+  =f.submit pat(:save), :class => :button
+  =f.submit pat(:cancel), :onclick => "window.location='#{url(:projects, :index)}';return false", :class => :button

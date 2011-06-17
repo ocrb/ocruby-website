@@ -30,3 +30,5 @@ end
 
 # Mounts the core application for this project
 Padrino.mount("Web").to('/')
+
+Padrino.mount("Admin").to("/admin")

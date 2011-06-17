@@ -1,7 +1,7 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../test_config.rb')
 
 context "User Model" do
-  purge!
+  set :clean_database, true
 
   context "definition" do
     setup { User }

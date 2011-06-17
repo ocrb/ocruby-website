@@ -1,0 +1,43 @@
+.block
+  .secondary-navigation
+    %ul.wat-cf
+      %li.first.active=link_to pat(:list), url(:projects, :index)
+      %li=link_to pat(:new), url(:projects, :new)
+  .content
+    %h2.title
+      =pat(:all)
+      =mt(:projects)
+    .inner
+      %table.table
+        %tr
+          %th.first=mat(:project, :name)
+          %th=mat(:project, :created_at)
+          %th=mat(:project, :updated_at)
+          %th=mat(:project, :website_url)
+          %th=mat(:project, :_id)
+          %th=mat(:project, :_type)
+          %th=mat(:project, :user_id)
+          %th=mat(:project, :rubygems_url)
+          %th=mat(:project, :description)
+          %th=mat(:project, :github_url)
+          %th.last="&nbsp;"
+        -@projects.each do |project|
+          %tr
+            %td.first=project.name
+            %td=project.created_at
+            %td=project.updated_at
+            %td=project.website_url
+            %td=project._id
+            %td=project._type
+            %td=project.user_id
+            %td=project.rubygems_url
+            %td=project.description
+            %td=project.github_url
+            %td.last
+              =button_to pat(:edit), url(:projects, :edit, :id => project.id), :method => :get, :class => :button_to
+              ="|"
+              =button_to pat(:delete), url(:projects, :destroy, :id => project.id), :method => :delete, :class => :button_to, :onsubmit => "return confirm('#{pat(:confirm)}')"
+      .actions-bar.wat-cf
+        .actions="&nbsp;"
+
+-content_for :sidebar, partial("base/sidebar")

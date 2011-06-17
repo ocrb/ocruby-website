@@ -6,6 +6,7 @@ gem 'rack-flash'
 gem 'thin' # or mongrel
 
 # Component requirements
+gem 'bcrypt-ruby', :require => "bcrypt"
 gem 'haml'
 gem 'sass'
 gem 'SystemTimer', :require => "system_timer"

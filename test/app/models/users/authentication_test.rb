@@ -1,7 +1,7 @@
 require File.expand_path('../../../../test_config', __FILE__)
 
 context "Users::Authentication" do
-  purge!
+  set :clean_database, true
 
   setup do
     User.class_eval { include Users::Authentication }
@@ -20,6 +20,8 @@ context "Users::Authentication" do
   end
 
   context "on password mechanism" do
+    set :clean_database, false
+
     setup do
       User.make :password => 'password123', :password_confirmation => 'password123'
       User.first
