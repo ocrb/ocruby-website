@@ -8,10 +8,11 @@ context "User Model" do
 
     asserts(:included_modules).includes Users::Authentication
 
-    asserts_topic.has_field :first_name,  :type => String
-    asserts_topic.has_field :last_name,   :type => String
-    asserts_topic.has_field :username,    :type => String
-    asserts_topic.has_field :email,       :type => String
+    asserts_topic.has_field :first_name,      :type => String
+    asserts_topic.has_field :last_name,       :type => String
+    asserts_topic.has_field :username,        :type => String
+    asserts_topic.has_field :email,           :type => String
+    asserts_topic.has_field :github_username, :type => String
 
     asserts_topic.has_field :description, :type => String
 
@@ -24,6 +25,12 @@ context "User Model" do
     asserts_topic.has_validation :validates_uniqueness_of, :email,    :case_sensitive => false
     asserts_topic.has_validation :validates_format_of,     :email,    :with => %r{\w+@\w+\.\w+}
     asserts_topic.has_validation :validates_length_of,     :email,    :within => 4..320
+
+    # I can't yet find the github username requirements on length/format, so taking a stab
+    asserts_topic.has_validation :validates_uniqueness_of, :github_username, :case_sensitive => false
+    asserts_topic.has_validation :validates_form_of, :github_username, :with => /^[a-z0-9]$/i
+    asserts_topic.has_validation :validates_length_of, :github_username,
+                                 :within => 3..30, :allow_blank => true
 
     asserts_topic.has_association :references_many, :projects
 
