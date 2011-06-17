@@ -8,6 +8,7 @@
 * JQuery
 * Riot
 * RR
+* Jasmine
 
 # Setup and Installation #
 
