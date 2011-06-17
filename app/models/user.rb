@@ -21,4 +21,6 @@ class User
   validates_length_of     :email,    :within => 4..320
 
   references_many :projects
+
+  references_many :presentation_requests
 end

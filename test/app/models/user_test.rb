@@ -26,5 +26,7 @@ context "User Model" do
     asserts_topic.has_validation :validates_length_of,     :email,    :within => 4..320
 
     asserts_topic.has_association :references_many, :projects
+
+    asserts_topic.has_association :references_many, :presentation_requests
   end
 end

@@ -9,6 +9,11 @@ Sham.define do
   tag_name   { Faker::Lorem.words(1).join }
 end
 
+PresentationRequest.blueprint do
+  content { Sham.body }
+  user    { User.make }
+end
+
 User.blueprint do
   username               { Sham.username }
   first_name             { Sham.first_name }
