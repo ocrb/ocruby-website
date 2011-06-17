@@ -37,13 +37,13 @@ It excepts you have growl and looks for images, at `~/.watchr_images` for
 
 If you want to run the tests manually you can do:
 
-    $ padrino rake test
+    $ bundle exec padrino rake test
 
 to run the entire suite.
 
 To see other possible tasks run:
 
-    $ padrino rake -T
+    $ bundle exec padrino rake -T
 
 # Features / Work Assignments #
 
