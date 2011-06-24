@@ -23,6 +23,10 @@
 
     $ bundle install
 
+### Install gitflow
+I suggest we try the gitflow (https://github.com/nvie/gitflow) branching
+model for this repo.  Initialize it for your repo with the defaults.
+
 # Testing #
 
 Provided is a watchr script that will act as your 'autotest'. You can
