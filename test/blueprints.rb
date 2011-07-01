@@ -9,16 +9,17 @@ Sham.define do
   tag_name   { Faker::Lorem.words(1).join }
 end
 
-PresentationRequest.blueprint do
-  content { Sham.body }
-  user    { User.make }
-end
-
 User.blueprint do
   username               { Sham.username }
+  github_username        { Sham.username }
   first_name             { Sham.first_name }
   last_name              { Sham.last_name }
   email                  { Sham.email }
   password               { 'testyy' }
   password_confirmation  { 'testyy' }
+end
+
+PresentationRequest.blueprint do
+  content { Sham.body }
+  user    { User.make }
 end

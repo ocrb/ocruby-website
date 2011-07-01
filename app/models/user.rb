@@ -22,7 +22,7 @@ class User
   validates_length_of     :email,    :within => 4..320
 
   validates_uniqueness_of :github_username , :case_sensitive => false
-  validates_format_of     :github_username , :with => /^[a-z0-9]$/i
+  validates_format_of     :github_username , :with => /\w*/i
   validates_length_of     :github_username , :within => 3..30, :allow_blank => true
 
   references_many :projects
