@@ -28,7 +28,7 @@ context "User Model" do
 
     # I can't yet find the github username requirements on length/format, so taking a stab
     asserts_topic.has_validation :validates_uniqueness_of, :github_username, :case_sensitive => false
-    asserts_topic.has_validation :validates_format_of, :github_username, :with => /^[a-z0-9]$/i
+    asserts_topic.has_validation :validates_format_of, :github_username, :with => /\w*/i
     asserts_topic.has_validation :validates_length_of, :github_username,
                                  :within => 3..30, :allow_blank => true
 

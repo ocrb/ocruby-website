@@ -7,5 +7,5 @@ class PresentationRequest
   validates_presence_of :content
   validates_length_of :content, :within => 3..255
 
-  referenced_in :user 
+  referenced_in :user
 end
