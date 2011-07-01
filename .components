@@ -1,9 +1,9 @@
 --- 
 :orm: mongoid
-:session_secret: 1c5df853bc91b94ce058f75fca4aea173a043e77add365a7d7110552a46cc2ef
+:stylesheet: scss
 :test: riot
 :mock: rr
-:renderer: haml
 :script: jquery
+:session_secret: 1c5df853bc91b94ce058f75fca4aea173a043e77add365a7d7110552a46cc2ef
+:renderer: haml
 :admin_renderer: haml
-:stylesheet: scss
