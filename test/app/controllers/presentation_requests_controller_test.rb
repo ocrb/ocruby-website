@@ -12,7 +12,7 @@ context "PresentationRequestsController" do
     end
 
     asserts(:status).equals 200
-    asserts(:body).matches PresentationRequest.first.content
-    asserts(:body).matches PresentationRequest.last.content
+    asserts("that it contains first presentation request") { topic.body.include? PresentationRequest.first.content }
+    asserts("that it contains last presentation request") { topic.body.include? PresentationRequest.last.content }
   end
 end
