@@ -1,9 +1,11 @@
 class Web < Padrino::Application
-  register ScssInitializer
+  register CompassInitializer
   register Padrino::Rendering
   register Padrino::Mailer
   register Padrino::Helpers
 
+  set :haml, :format => :html5
+ 
   ##
   # Caching support
   #
@@ -54,4 +56,9 @@ class Web < Padrino::Application
   #     render 'errors/505'
   #   end
   #
+
+  get "/" do
+    render :index
+  end
+
 end

@@ -8,7 +8,7 @@ gem 'thin' # or mongrel
 # Component requirements
 gem 'bcrypt-ruby', :require => "bcrypt"
 gem 'haml'
-gem 'sass'
+gem 'compass'
 gem 'SystemTimer', :require => "system_timer"
 # Mongo
 gem 'mongoid', "2.0.0"
