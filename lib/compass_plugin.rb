@@ -11,7 +11,7 @@ module CompassInitializer
       config.sass_dir = "app/stylesheets"
       config.project_type = :stand_alone
       config.http_path = "/"
-      config.css_dir = "public/stylesheets"
+      config.css_dir = "public/compiled/stylesheets"
       config.images_dir = "public/images"
       config.javascripts_dir = "public/javascripts"
       config.output_style = :compressed
