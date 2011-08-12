@@ -1,0 +1,25 @@
+!!! 
+%html
+  %head
+    %meta(charset="UTF-8")
+    %title ocruby
+
+    %link(rel="icon" href="/favicon.ico")
+    %link(rel="shortcut icon" href="/favicon.ico")
+    = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
+
+  %body
+    %header
+      %h1 ocruby
+      %h2 Ruby meetups and hackfests every Thursday in Orange County, CA
+      %ul.nav
+        %li= link_to 'Home', '/'
+        %li= link_to 'Meetups', '#'
+        %li= link_to 'Hackfests', '#'
+        %li= link_to 'Projects', '#'
+    .content
+      = yield
+    %sidebar
+      %iframe{ :width => 255, :height => 570, :src => "http://meetu.ps/3y9mw", :frameborder => 0 } 
+    %footer
+      footer goes here
