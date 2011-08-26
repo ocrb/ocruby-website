@@ -8,7 +8,7 @@ $(function(){
   });
 
   var activatePrimary = function(el) {
-    $el = $(el);
+    var $el = $(el);
     $.each($('.topbar .primary-nav li'), function(idx, menuItem){
       $(menuItem).closest('li').removeClass('active');
     });
