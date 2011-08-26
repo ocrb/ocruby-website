@@ -2,24 +2,145 @@
 %html
   %head
     %meta(charset="UTF-8")
-    %title ocruby
-
+    %title OCRuby Brigade
     %link(rel="icon" href="/favicon.ico")
     %link(rel="shortcut icon" href="/favicon.ico")
-    = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
-
+    = stylesheet_link_tag "http://twitter.github.com/bootstrap/assets/css/bootstrap-1.1.0.min.css", "screen.css", :media => "screen, projection"
+    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" 
+    = javascript_include_tag "jquery.scrollTo-1.4.2-min", "application.js"
   %body
-    %header
-      %h1 ocruby
-      %h2 Ruby meetups and hackfests every Thursday in Orange County, CA
-      %ul.nav
-        %li= link_to 'Home', '/'
-        %li= link_to 'Meetups', '#'
-        %li= link_to 'Hackfests', '#'
-        %li= link_to 'Projects', '#'
-    .content
-      = yield
-    %sidebar
-      %iframe{ :width => 255, :height => 570, :src => "http://meetu.ps/3y9mw", :frameborder => 0 } 
-    %footer
-      footer goes here
+    .topbar
+      .fill
+        .container
+          %h3
+            %a{:href => "#"} OC Ruby
+          %ul.primary-nav
+            %li
+              %a.active{:href => "#"} When & Where
+            %li
+              %a{:href => "#"} People
+            %li
+              %a{:href => "#"} Projects
+            %li
+              %a#contact_us{:href => "#"} Contact Us
+          %form{:action => "", :method => "post"}
+            %input{:placeholder => "Search", :type => "text"}/
+          %ul.nav.secondary-nav
+            %li.menu
+              %a.menu{:href => "#"} Account
+              %ul.menu-dropdown
+                %li
+                  %a{:href => "#"} Secondary link
+                %li
+                  %a{:href => "#"} Something else here
+                %li.divider
+                  %li
+                    %a{:href => "#"} Another link
+    #masthead
+      .inner
+        .container
+          %h1 OCRuby Brigade
+          %p.lead
+            Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          %p
+            %strong Some strong:
+            Some subheading Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam.
+    #first
+      .container
+        .row
+          .span5.columns
+            %h6 Foo & Bar
+            %p Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          .span5.columns
+            %h6 Fizz & Buzz
+            %p Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          .span5.columns
+            %h6 The Meetup
+            %p We organize our meetings and communicate with our members via meetup.com.  Join our group!
+            %p.center
+              %a.btn{:href => "http://www.meetup.com/ocruby"} Meetup.com →
+    %div
+      .container
+        #when_and_where.page-header
+          %h1
+            When & Where
+            %small general information on our schedule
+        .row
+          %p Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          %p Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          %p Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          %p Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          %p Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        #people.page-header
+          %h1
+            People
+            %small members of our group
+        .row
+          .person.row
+            .span4.columns
+              %h3 Amara Bayer
+              %p.twitter @amara.bayer
+            .span12.columns
+              Bio here Inventore omnis ut iusto totam.  Adipisci aspernatur ea laudantium officiis.  Numquam fuga et ipsa voluptatem corporis id quis.  In fugiat dolor placeat nesciunt.  Dolore aut laboriosam voluptate esse non.  Excepturi impedit dolorem eos non fugiat.  In voluptatem eum vitae quaerat sunt.
+          .person.row
+            .span4.columns
+              %h3 Christy O'Hara
+              %p.twitter @christy.o'hara
+            .span12.columns
+              Bio here Dolor earum debitis voluptatum repudiandae dolores sed aut ex.  Sit quas ipsum sunt iure cupiditate.  Itaque tempore laudantium eos officia ea.  Molestiae eveniet id occaecati.
+          .person.row
+            .span4.columns
+              %h3 Damon Schmeler III
+              %p.twitter @damon.schmeler.iii
+            .span12.columns
+              Bio here In vel nihil quia molestiae id magni cum asperiores.  Modi similique id amet qui qui quasi commodi.  In minus beatae pariatur illo repellat.
+          .person.row
+            .span4.columns
+              %h3 Dorothea Gerlach
+              %p.twitter @dorothea.gerlach
+            .span12.columns
+              Bio here Tempora illo voluptates quod labore molestiae quia dignissimos qui.  Fuga adipisci error dolore ipsum rem maxime itaque.  Et in inventore libero enim.  A quaerat quae repudiandae excepturi.  Praesentium autem debitis voluptates vel doloremque rerum numquam.  Quos quis a facilis.  Voluptates quos debitis perspiciatis a.
+          .person.row
+            .span4.columns
+              %h3 Dr. Isadore Bashirian
+              %p.twitter @dr..isadore.bashirian
+            .span12.columns
+              Bio here Quidem et est iste non nobis et.  Excepturi et et saepe quisquam.  Rerum non atque quisquam magni totam facilis velit optio.  Vel et est ea voluptas dicta illum.  Culpa ut ea repellendus.  Ipsam occaecati eveniet fugit odio et quisquam accusamus tenetur.
+        #projects.page-header
+          %h1
+            Projects
+            %small things we've worked on
+        .row
+          %p Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          %p Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+        .well.email-modal{:style => "background-color: #888; border: none; padding: 40px;"}
+          .modal{:style => "position: relative; top: auto; left: auto; margin: 0 auto; z-index: 1"}
+            .modal-header
+              %h3
+                Email Us
+                %small we'd love to hear your thoughts and proposals
+              %a.close{:href => "#"} x
+            .modal-body
+              %form.form-stacked{:action => "", :method => "post"}
+                %fieldset
+                  .clearfix
+                    %label{:for => ""} Name
+                    .input
+                      %input#xlInput.xlarge{:name => "xlInput", :size => "30", :type => "text"}
+                  .clearfix
+                    %label{:for => ""} Email
+                    .input
+                      %input#xlInput.xlarge{:name => "xlInput", :size => "30", :type => "text"}
+                  .clearfix
+                    %label{:for => ""} Subject
+                    .input
+                      %input#xlInput.xlarge{:name => "xlInput", :size => "30", :type => "text"}
+                  .clearfix
+                    %label{:for => ""} Message
+                    .input
+                      %textarea.email-message
+            .modal-footer
+              %a.btn.primary{:href => "#"} Send
+              %a.btn.secondary{:href => "#"} Cancel
+    #fade.black_overlay
+

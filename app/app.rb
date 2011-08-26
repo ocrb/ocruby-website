@@ -1,5 +1,4 @@
 class Web < Padrino::Application
-  register CompassInitializer
   register Padrino::Rendering
   register Padrino::Mailer
   register Padrino::Helpers
