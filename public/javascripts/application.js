@@ -22,24 +22,17 @@ $(function(){
     $.scrollTo(0, 500);
   });
 
-  // DRY this up
-  $(".topbar .primary-nav li:nth-child(1)").click(function(e){
-    e.preventDefault();
-    activatePrimary(this);
-    $.scrollTo("#when_and_where", 500, { offset : -50});
-  });
+  var menuClick = function(selector, scrollTarget) {
+    $(selector).click(function(e){
+      e.preventDefault();
+      activatePrimary(this);
+      $.scrollTo(scrollTarget, 500, { offset : -50});
+    });
+  };
 
-  $(".topbar .primary-nav li:nth-child(2)").click(function(e){
-    e.preventDefault();
-    activatePrimary(this);
-    $.scrollTo("#people", 500, { offset : -50 });
-  });
-
-  $(".topbar .primary-nav li:nth-child(3)").click(function(e){
-    e.preventDefault();
-    activatePrimary(this);
-    $.scrollTo("#projects", 500, { offset : -50 } );
-  });
+  menuClick(".topbar #when-and-where", "#when-and-where-section");
+  menuClick(".topbar #people", "#people-section");
+  menuClick(".topbar #projects", "#projects-section");
 
   $("#contact_us").click(function(e){
     e.preventDefault();
