@@ -27,7 +27,7 @@ describe "Users::Authentication" do
 
   describe "on password mechanism" do
     let(:user) do
-      user = User.make :password => 'password123', :password_confirmation => 'password123'
+      User.make :password => 'password123', :password_confirmation => 'password123'
       User.first
     end
 
