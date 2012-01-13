@@ -3,10 +3,6 @@ require File.expand_path('../../../../spec_helper', __FILE__)
 describe "Users::Authentication" do
   let(:user) { User.new }
 
-  before do
-    User.class_eval { include Users::Authentication }
-  end
-
   describe "defintion" do
     it "has a password" do
       assert user.respond_to? :password
@@ -31,7 +27,7 @@ describe "Users::Authentication" do
 
   describe "on password mechanism" do
     let(:user) do
-      User.make :password => 'password123', :password_confirmation => 'password123'
+      user = User.make :password => 'password123', :password_confirmation => 'password123'
       User.first
     end
 
@@ -43,7 +39,7 @@ describe "Users::Authentication" do
     end
 
     it "doesn't re-encrypt on a save" do
-      crypt = user.reload.crypted_password
+      crypt = user.crypted_password
       user.save
       assert_equal crypt, user.reload.crypted_password
     end
@@ -60,11 +56,10 @@ describe "Users::Authentication" do
   describe "#authenticate" do
     let(:user) do
       User.make :username => 'johnny', :password => 'johnny123', :password_confirmation => 'johnny123'
-      User.first
     end
 
     it "returns user if password matches" do
-      assert_equal User.authenticate('johnny', 'johnny123'), User.where(:username => 'johnny').first
+      assert_equal user, User.authenticate('johnny', 'johnny123')
     end
 
     it "returns nil if password doesn't match" do
