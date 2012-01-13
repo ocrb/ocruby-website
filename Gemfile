@@ -9,7 +9,7 @@ gem 'thin' # or mongrel
 gem 'bcrypt-ruby', :require => "bcrypt"
 gem 'haml'
 gem 'compass'
-gem 'SystemTimer', :require => "system_timer"
+gem 'SystemTimer', :require => "system_timer", :platforms => :mri_18
 # Mongo
 gem 'mongoid', "2.0.0"
 gem 'bson_ext', :require => "mongo"
@@ -29,6 +29,9 @@ group :test do
   gem 'rack-test', :require => "rack/test"
   gem 'watchr'
   gem 'jasmine', '1.0.2.1'
+  gem 'mocha'
+  gem 'minitest',         :require => 'minitest/autorun'
+  gem 'minitest-mongoid', :require => 'minitest/mongoid'
 end
 
 # Padrino
