@@ -6,7 +6,11 @@ require File.join(File.dirname(__FILE__),'blueprints')
 Dir.glob(File.expand_path('../support/*.rb',__FILE__)).each { |f| require f }
 
 DatabaseCleaner.strategy = :truncation
-
+class MiniTest::Spec
+  before :each do
+    DatabaseCleaner.clean
+  end
+end
 
 class MiniTest::Unit::TestCase
   include Mocha::API
