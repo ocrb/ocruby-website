@@ -3,7 +3,7 @@ system 'clear'
 
 def growl(message)
   growlnotify = `which growlnotify`.chomp
-  title = "Watchr Test Results"
+  title = "Watchr spec Results"
   image = message.include?('0 failures, 0 errors') ? "~/.watchr_images/passed.png" : "~/.watchr_images/failed.png"
   options = "-w -n Watchr --image '#{File.expand_path(image)}' -m '#{message}' '#{title}'"
   system %(#{growlnotify} #{options} &)
@@ -14,33 +14,33 @@ def run(cmd)
   `#{cmd}`
 end
 
-def run_test_file(file)
+def run_spec_file(file)
   system('clear')
-  result = run(%Q(ruby -I"lib:test" -rubygems #{file}))
+  result = run(%Q(ruby -I"lib:spec" -rubygems #{file}))
   growl result.split("\n").last rescue nil
   puts result
 end
 
-def run_all_tests
+def run_all_specs
   system('clear')
-  result = run "bundle exec padrino rake test"
+  result = run "bundle exec padrino rake spec"
   growl result.split("\n").last rescue nil
   puts result
 end
 
 
-watch("^lib.*/(.*)\.rb") { |m| run_test_file("test/lib/#{m[1]}_test.rb") }
-watch("test.*/test_config\.rb") { run_all_tests }
-watch('test/(.*).*_test\.rb') { |m| run_test_file(m[0]) }
+watch("^lib.*/(.*)\.rb") { |m| run_spec_file("spec/lib/#{m[1]}_spec.rb") }
+watch("spec.*/spec_helper\.rb") { run_all_specs }
+watch('spec/(.*).*_spec\.rb') { |m| run_spec_file(m[0]) }
 
-# Web Tests
-watch("^app/controllers/(.*).rb") { |m| run_test_file("test/app/controllers/#{m[1]}_controller_test.rb")}
-watch("^app/models/(.*).rb") { |m| run_test_file("test/app/models/#{m[1]}_test.rb")}
+# Web specs
+watch("^app/controllers/(.*).rb") { |m| run_spec_file("spec/app/controllers/#{m[1]}_controller_spec.rb")}
+watch("^app/models/(.*).rb") { |m| run_spec_file("spec/app/models/#{m[1]}_spec.rb")}
 
 # Ctrl-\
 Signal.trap 'QUIT' do
-  puts " --- Running all tests ---\n\n"
-  run_all_tests
+  puts " --- Running all specs ---\n\n"
+  run_all_specs
 end
 
 @interrupted = false
@@ -56,8 +56,6 @@ Signal.trap 'INT' do
     Kernel.sleep 1.5
     @interrupted = false
     # raise Interrupt, nil # let the run loop catch it
-    run_all_tests
+    run_all_specs
   end
 end
-
-

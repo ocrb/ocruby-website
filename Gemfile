@@ -22,16 +22,14 @@ group :test do
   gem 'machinist'
   gem 'machinist_mongo', :require => 'machinist/mongoid'
   gem 'faker'
-  gem 'rr'
-  gem 'riot'
-  gem 'riot-mongoid', "2.0.0.beta.rc.7"
   gem 'database_cleaner'
   gem 'rack-test', :require => "rack/test"
   gem 'watchr'
   gem 'jasmine', '1.0.2.1'
   gem 'mocha'
   gem 'minitest',         :require => 'minitest/autorun'
-  gem 'minitest-mongoid', :require => 'minitest/mongoid'
+  gem 'purdytest'
+  gem 'minitest-mongoid'
 end
 
 # Padrino
