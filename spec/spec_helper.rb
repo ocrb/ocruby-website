@@ -5,6 +5,8 @@ require File.join(File.dirname(__FILE__),'blueprints')
 # Support Files
 Dir.glob(File.expand_path('../support/*.rb',__FILE__)).each { |f| require f }
 
+DatabaseCleaner.strategy = :truncation
+
 
 class MiniTest::Unit::TestCase
   include Mocha::API
