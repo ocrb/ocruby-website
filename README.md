@@ -6,8 +6,8 @@
 * Haml
 * SCSS
 * JQuery
-* Riot
-* RR
+* MiniTest
+* Mocha
 * Jasmine
 * Twitter Bootstrap for style
 
@@ -33,7 +33,7 @@ model for this repo.  Initialize it for your repo with the defaults.
 Provided is a watchr script that will act as your 'autotest'. You can
 run it by:
 
-    $ watchr test.watchr
+    $ watchr spec.watchr
 
 Some caveats:
 
@@ -41,9 +41,9 @@ It excepts you have growl and looks for images, at `~/.watchr_images` for
 `passed.png` or `failed.png`.
 
 
-If you want to run the tests manually you can do:
+If you want to run the specs manually you can do:
 
-    $ bundle exec padrino rake test
+    $ bundle exec padrino rake spec
 
 to run the entire suite.
 
