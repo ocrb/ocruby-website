@@ -21,21 +21,7 @@
               %a#people{:href => "#"} People
             %li
               %a#projects{:href => "#"} Projects
-            %li
-              %a#contact_us{:href => "#"} Contact Us
-          %form{:action => "", :method => "post"}
-            %input{:placeholder => "Search", :type => "text"}/
-          %ul.nav.secondary-nav
-            %li.menu
-              %a.menu{:href => "#"} Account
-              %ul.menu-dropdown
-                %li
-                  %a{:href => "#"} Secondary link
-                %li
-                  %a{:href => "#"} Something else here
-                %li.divider
-                  %li
-                    %a{:href => "#"} Another link
+
     #masthead
       .inner
         .container
@@ -46,9 +32,9 @@
             Come join us for our monthly meetings and weekly hackfests @
             = link_to 'Kajabi', 'http://www.kajabiapp.com/'
           %p
-            %strong NEXT MEETUP:
+            %strong Next Meetup:
             OC Ruby Hackfest @
-            = link_to 'Kajabi', '#'
+            = link_to 'Kajabi', 'http://www.kajabiapp.com'
 
     = yield
 
