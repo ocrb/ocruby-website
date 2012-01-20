@@ -11,7 +11,7 @@ class Web < Padrino::Application
   register Padrino::Cache
   enable :caching
   Padrino.cache = if Padrino.env == :production
-    Padrino::Cache::Store::Memcache.new(::Dalli::Client.new('127.0.0.1:11211', :exception_retry_limit => 1))
+    Padrino::Cache::Store::Memcache.new(::Dalli::Client.new)
   else
     Padrino.cache = Padrino::Cache::Store::Memory.new(10_000)
   end
