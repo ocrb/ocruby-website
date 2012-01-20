@@ -75,6 +75,9 @@ class Web < Padrino::Application
     render :index
   end
 
+  ## 
+  # Run in a crontab somewhere...
+  # curl -s -X PUT http://ocrb-staging.heroku.com/populates_cache -d ""
   put "/populates_cache" do
     PopulatesCache.set
     "ok"
