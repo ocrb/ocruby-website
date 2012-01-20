@@ -2,11 +2,15 @@
   .container
     .row
       .span5.columns
-        %h6 Foo &amp; Bar
-        %p Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        %h6 Meet &amp; Greet
+        %p
+          Network with fellow Ruby developers in the Orange County area
+          or sit and listen(or participate) in our monthly meetup presentations.
       .span5.columns
-        %h6 Fizz &amp; Buzz
-        %p Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        %h6 Code &amp; Hack
+        %p
+          Come have fun and work on awesome projects with the fellow members of OCRuby.
+          Newcomers and seasoned veterans are more than welcome to join, so come out!
       .span5.columns
         %h6 The Meetup
         %p We organize our meetings and communicate with our members via meetup.com.  Join our group!
@@ -19,11 +23,22 @@
         When &amp; Where
         %small general information on our schedule
     .row
-      %p Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-      %p Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-      %p Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-      %p Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-      %p Lorem ipsum dolor sit amet, consectetur magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+      .span9
+        = partial 'projects/map'
+      .span7
+        %h3 Address
+        %h5 OC Ruby Hackfest, Every Thursday @
+        %address
+          333 El Camino
+          %br
+          Tustin, CA 92780
+        %h5 Instructions
+        %p
+          %strong Parking:
+          on street side, avoid gravel lot at ALL COST
+          %br
+          %strong Hacking:
+          Bring your laptops and thinking caps
     #people-section.page-header
       %h1
         People
