@@ -135,3 +135,18 @@ textarea.email-message  {
 .person {
   margin-bottom: 10px;
 }
+
+.person a.avatar:hover {
+  text-decoration: none;
+  display: block;
+}
+
+.person .avatar img {
+  width: 40px;
+}
+
+.person a.profile-url {
+  position: relative;
+  bottom: 15px;
+  padding-left: 15px;
+}

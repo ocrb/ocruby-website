@@ -57,6 +57,7 @@ class Web < Padrino::Application
   #
 
   get "/" do
+    @members = OcrbOrganization.members
     render :index
   end
 
