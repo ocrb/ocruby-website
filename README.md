@@ -37,15 +37,13 @@ run it by:
 
 Some caveats:
 
-It excepts you have growl and looks for images, at `~/.watchr_images` for
+It expects you have `growl` and looks for images, at `~/.watchr_images` for
 `passed.png` or `failed.png`.
 
 
-If you want to run the specs manually you can do:
+To run the specs manually:
 
     $ bundle exec padrino rake spec
-
-to run the entire suite.
 
 To see other possible tasks run:
 
