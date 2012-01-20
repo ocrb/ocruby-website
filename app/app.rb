@@ -75,4 +75,9 @@ class Web < Padrino::Application
     render :index
   end
 
+  put "/populates_cache" do
+    PopulatesCache.set
+    "ok"
+  end
+
 end
