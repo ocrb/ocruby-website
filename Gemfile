@@ -25,7 +25,6 @@ group :test do
   gem 'database_cleaner'
   gem 'rack-test', :require => "rack/test"
   gem 'watchr'
-  gem 'jasmine', '1.0.2.1'
   gem 'mocha'
   gem 'minitest',         :require => 'minitest/autorun'
   gem 'purdytest'
