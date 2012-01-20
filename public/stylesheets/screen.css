@@ -1,5 +1,6 @@
 body {
   position: relative;
+  margin-bottom: 40px;
 }
 
 .center {
@@ -142,6 +143,8 @@ textarea.email-message  {
 
 .person {
   margin-bottom: 10px;
+  float: left;
+  margin-right: 20px;
 }
 
 .person a.avatar:hover {

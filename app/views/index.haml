@@ -27,7 +27,7 @@
     #map.row
       .span9
         = partial 'projects/map'
-      .span7
+      .span6.offset1
         %h3 Address
         %h5 OC Ruby Hackfest, Every Thursday @
         %address
@@ -46,7 +46,7 @@
         People
         %small members of our group
     .row
-      .span8
+      .span9
 
         - @members.each do |member|
           .person.row
@@ -57,7 +57,7 @@
                 %a{:href => member.profile_url, :class => "profile-url"}
                   = member.login
 
-      .span4.pull-right.offset4
+      .span5.pull-right.offset1
         = partial 'twitter'
 
     #projects-section.page-header
