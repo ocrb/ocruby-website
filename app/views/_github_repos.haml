@@ -1,0 +1,9 @@
+- @repos.each do |repos|
+  .row.repos
+    .span3.columns
+      %h3
+        %a{:href => repos.html_url}
+          = repos.name
+    .span12.columns
+      = repos.description
+

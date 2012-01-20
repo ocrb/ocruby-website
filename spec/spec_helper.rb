@@ -2,6 +2,7 @@ PADRINO_ENV = 'test' unless defined?(PADRINO_ENV)
 require File.expand_path('../../config/boot', __FILE__)
 require File.join(File.dirname(__FILE__),'blueprints')
 
+require 'mocha'
 require 'fakeweb'
 
 # Support Files

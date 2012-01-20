@@ -55,12 +55,12 @@ body {
 }
 
 a {
-  color: #099;
+  color: #960000;
   text-decoration: none;
 }
 
 a:hover {
-  color: #099;
+  color: #B00800;
   text-decoration: underline;
 }
 
@@ -160,4 +160,8 @@ textarea.email-message  {
   position: relative;
   bottom: 15px;
   padding-left: 15px;
+}
+
+.row.repos > div {
+  line-height: 40px;
 }

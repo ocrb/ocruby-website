@@ -16,6 +16,7 @@ gem 'bson_ext', :require => "mongo"
 # Authentication
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'httparty'
+gem 'dalli'
 
 # Test requirements
 
@@ -26,7 +27,12 @@ group :test do
   gem 'database_cleaner'
   gem 'rack-test', :require => "rack/test"
   gem 'watchr'
-  gem 'mocha'
+
+  # Don't let bundler require for now because it breaks
+  # some mocha expectations.
+  # See https://github.com/floehopper/mocha/issues/26
+  gem 'mocha', ">= 0.10.1", :require => false
+
   gem 'minitest',         :require => 'minitest/autorun'
   gem 'purdytest'
   gem 'minitest-mongoid'
