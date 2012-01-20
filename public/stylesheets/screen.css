@@ -39,6 +39,10 @@ body {
   text-align: center;
 }
 
+#masthead strong {
+  text-transform: uppercase;
+}
+
 #masthead p a {
   color: white;
   font-weight: bold;
