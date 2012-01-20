@@ -4,14 +4,19 @@ class Web < Padrino::Application
   register Padrino::Helpers
 
   set :haml, :format => :html5
- 
+
   ##
   # Caching support
   #
   register Padrino::Cache
   enable :caching
-  # Single instance heroku dyno, just use memory
-  set :cache, Padrino::Cache::Store::Memory.new(10000)
+  Padrino.cache = if Padrino.env == :production
+    Padrino::Cache::Store::Memcache.new(::Dalli::Client.new('127.0.0.1:11211', :exception_retry_limit => 1))
+  else
+    Padrino.cache = Padrino::Cache::Store::Memory.new(10_000)
+  end
+  set :cache, Padrino.cache
+
   #
   # You can customize caching store engines:
   #
@@ -59,7 +64,14 @@ class Web < Padrino::Application
   #
 
   get "/" do
-    @members = cache("members", :expire_in => 30) { OcrbOrganization.members }
+    @members = cache(PopulatesCache::MEMBERS_KEY, :expires_in => PopulatesCache::EXPIRES_IN) do
+      OcrbOrganization.members
+    end
+
+    @repos = cache(PopulatesCache::REPOS_KEY, :expires_in => PopulatesCache::EXPIRES_IN) do
+      OcrbOrganization.repos
+    end
+
     render :index
   end
 
