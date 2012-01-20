@@ -8,7 +8,6 @@
 * JQuery
 * MiniTest
 * Mocha
-* Jasmine
 * Twitter Bootstrap for style
 
 # Setup and Installation #
