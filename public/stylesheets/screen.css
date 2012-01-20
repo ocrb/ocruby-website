@@ -132,6 +132,10 @@ textarea.email-message  {
   filter: alpha(opacity=80);
 }
 
+#map {
+  margin-bottom: 10px;
+}
+
 .person {
   margin-bottom: 10px;
 }
