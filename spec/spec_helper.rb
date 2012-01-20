@@ -2,6 +2,8 @@ PADRINO_ENV = 'test' unless defined?(PADRINO_ENV)
 require File.expand_path('../../config/boot', __FILE__)
 require File.join(File.dirname(__FILE__),'blueprints')
 
+require 'fakeweb'
+
 # Support Files
 Dir.glob(File.expand_path('../support/*.rb',__FILE__)).each { |f| require f }
 

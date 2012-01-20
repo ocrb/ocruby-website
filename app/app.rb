@@ -8,8 +8,10 @@ class Web < Padrino::Application
   ##
   # Caching support
   #
-  # register Padrino::Cache
-  # enable :caching
+  register Padrino::Cache
+  enable :caching
+  # Single instance heroku dyno, just use memory
+  set :cache, Padrino::Cache::Store::Memory.new(10000)
   #
   # You can customize caching store engines:
   #
@@ -57,6 +59,7 @@ class Web < Padrino::Application
   #
 
   get "/" do
+    @members = cache("members", :expire_in => 30) { OcrbOrganization.members }
     render :index
   end
 

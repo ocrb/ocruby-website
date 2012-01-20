@@ -15,6 +15,7 @@ gem 'mongoid', "2.0.0"
 gem 'bson_ext', :require => "mongo"
 # Authentication
 gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'httparty'
 
 # Test requirements
 
@@ -29,6 +30,7 @@ group :test do
   gem 'minitest',         :require => 'minitest/autorun'
   gem 'purdytest'
   gem 'minitest-mongoid'
+  gem 'fakeweb'
 end
 
 # Padrino

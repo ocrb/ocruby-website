@@ -47,36 +47,16 @@
         %small members of our group
     .row
       .span8
-        .person.row
-          .span4.columns
-            %h3 Amara Bayer
-            %p.twitter @amara.bayer
-          .span12.columns
-            Bio here Inventore omnis ut iusto totam.  Adipisci aspernatur ea laudantium officiis.  Numquam fuga et ipsa voluptatem corporis id quis.  In fugiat dolor placeat nesciunt.  Dolore aut laboriosam voluptate esse non.  Excepturi impedit dolorem eos non fugiat.  In voluptatem eum vitae quaerat sunt.
-        .person.row
-          .span4.columns
-            %h3 Christy O'Hara
-            %p.twitter @christy.o'hara
-          .span12.columns
-            Bio here Dolor earum debitis voluptatum repudiandae dolores sed aut ex.  Sit quas ipsum sunt iure cupiditate.  Itaque tempore laudantium eos officia ea.  Molestiae eveniet id occaecati.
-        .person.row
-          .span4.columns
-            %h3 Damon Schmeler III
-            %p.twitter @damon.schmeler.iii
-          .span12.columns
-            Bio here In vel nihil quia molestiae id magni cum asperiores.  Modi similique id amet qui qui quasi commodi.  In minus beatae pariatur illo repellat.
-        .person.row
-          .span4.columns
-            %h3 Dorothea Gerlach
-            %p.twitter @dorothea.gerlach
-          .span12.columns
-            Bio here Tempora illo voluptates quod labore molestiae quia dignissimos qui.  Fuga adipisci error dolore ipsum rem maxime itaque.  Et in inventore libero enim.  A quaerat quae repudiandae excepturi.  Praesentium autem debitis voluptates vel doloremque rerum numquam.  Quos quis a facilis.  Voluptates quos debitis perspiciatis a.
-        .person.row
-          .span4.columns
-            %h3 Dr. Isadore Bashirian
-            %p.twitter @dr..isadore.bashirian
-          .span12.columns
-            Bio here Quidem et est iste non nobis et.  Excepturi et et saepe quisquam.  Rerum non atque quisquam magni totam facilis velit optio.  Vel et est ea voluptas dicta illum.  Culpa ut ea repellendus.  Ipsam occaecati eveniet fugit odio et quisquam accusamus tenetur.
+
+        - @members.each do |member|
+          .person.row
+            .span4.columns
+              %h3
+                %a{:href => member.profile_url, :class => "avatar"}
+                  %img{:src => member.avatar_url, :size => "40x40"}
+                %a{:href => member.profile_url, :class => "profile-url"}
+                  = member.login
+
       .span4.pull-right.offset4
         = partial 'twitter'
 
