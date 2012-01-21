@@ -194,6 +194,7 @@ textarea.email-message  {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
+  border: 1px solid #DDD;
 }
 
 .row.repos > div {
