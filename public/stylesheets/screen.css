@@ -159,7 +159,6 @@ textarea.email-message  {
 
 .person a.avatar:hover {
   text-decoration: none;
-  display: block;
 }
 
 .person .avatar img {
