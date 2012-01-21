@@ -137,8 +137,13 @@ textarea.email-message  {
   filter: alpha(opacity=80);
 }
 
-#map {
+.row.map > div {
+  height: 380px;
   margin-bottom: 10px;
+}
+
+.row.map address {
+  margin-bottom: 0;
 }
 
 .person {
@@ -160,6 +165,13 @@ textarea.email-message  {
   position: relative;
   bottom: 15px;
   padding-left: 15px;
+}
+
+/* Target container to overrule twitter js */
+.container .twtr-doc, .container .twtr-timeline {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
 }
 
 .row.repos > div {

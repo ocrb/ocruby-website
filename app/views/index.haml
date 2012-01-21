@@ -15,7 +15,7 @@
           %a.btn{:href => "http://www.github.com/ocrb"} OCRuby @ Github.com &rarr;
       .span5.columns
         %h6 The Meetup
-        %p We organize our meetings and communicate with our members via meetup.com.  Join our group!
+        %p We organize our meetings and communicate with our members via meetup.com.  Meetups typically occur on the last Thursday of the month.  Join our group!
         %p.center
           %a.btn{:href => "http://www.meetup.com/ocruby"} Meetup.com &rarr;
 %div
@@ -24,23 +24,42 @@
       %h1
         When &amp; Where
         %small general information on our schedule
-    #map.row
+    #kajabi-map.row.map
       .span9
         = partial 'projects/map'
       .span6.offset1
-        %h3 Address
-        %h5 OC Ruby Hackfest, Every Thursday @
+        %h4 Hackfests
+        %h5 When
+        First 3 Thursdays of the Month
+        %h5 Address
         %address
           333 El Camino
           %br
           Tustin, CA 92780
         %h5 Instructions
         %p
-          %strong Parking:
-          on street side, avoid gravel lot at ALL COST
-          %br
           %strong Hacking:
           Bring your laptops and thinking caps
+          %br
+          %strong Parking:
+          on street side, avoid gravel lot at all cost
+          %strong Entrance:
+          Back of the building &amp; up the stairs
+    #smartsoft-map.row.map
+      .span9
+        = partial 'smartsoft_map'
+      .span6.offset1
+        %h4 Monthly Meetups
+        %h5 When
+        Last Thursday of the Month
+        %h5 Address
+        %address
+          18006 Sky Park Circle
+          %br
+          Suite 207
+          %br
+          Irvine, CA 92614
+
     #people-section.page-header
       %h1
         People
