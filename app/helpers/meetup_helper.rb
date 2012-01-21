@@ -1,7 +1,8 @@
 Web.helpers do
   def meetup_summary(meetup)
     if meetup
-      link_to "#{meetup.name} @ #{meetup.venue && meetup.venue.name}", meetup.event_url
+      time = (Time.at meetup.time.to_i / 1000).strftime("%b %d, %l:%M%p")
+      link_to "#{meetup.name}, #{time} @ #{meetup.venue && meetup.venue.name}", meetup.event_url
     end
   end
 end
