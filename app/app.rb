@@ -13,7 +13,7 @@ class Web < Padrino::Application
   Padrino.cache = if Padrino.env == :production
     Padrino::Cache::Store::Memcache.new(::Dalli::Client.new)
   else
-    Padrino.cache = Padrino::Cache::Store::Memory.new(10_000)
+    Padrino::Cache::Store::Memory.new(10_000)
   end
   set :cache, Padrino.cache
 
@@ -21,7 +21,13 @@ class Web < Padrino::Application
   # Routes
   #
 
-  get "/" do
+
+  get "/", :cache => (Padrino.env == :production) do
+    # Short caching on the index to prevent single dyno heroku
+    # clobbering, and also (maybe) keep the page faster when the
+    # data cache is being populated
+    expires_in 10
+
     @next_meetup = cache(PopulatesCache::NEXT_MEETUP_KEY, :expires_in => PopulatesCache::EXPIRES_IN) do
       OcrbOrganization.next_meetup
     end
