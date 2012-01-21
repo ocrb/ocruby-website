@@ -29,6 +29,38 @@ class OcrbOrganization
     end.reject(&:fork)
   end
 
+  # class Meetup
+  #   attr_reader :title, :url
+  #   def initialize(title, url)
+  #     @title = title
+  #     @url = url
+  #   end
+
+  #   def self.from_response(response)
+  #     return unless response["results"] and info = response["results"].first
+  #     new(info["name"], info["event_url"])
+  #   end
+  # end
+
+  # class Meetup < OpenStruct
+  #   def self.from_response(response)
+  #     return unless response["results"] and info = response["results"].first
+  #     new(info)
+  #   end
+  # end
+
+  class Meetup < Hashie::Mash
+    def self.from_response(response)
+      return unless response["results"] and info = response["results"].first
+      new(info)
+    end
+  end
+
+  def self.next_meetup(meetup_key = ENV["MEETUP_KEY"])
+    response = get("https://api.meetup.com/2/events?key=#{meetup_key}&sign=true&group_urlname=ocruby")
+    meetup = Meetup.from_response(response)
+  end
+
   protected
 
   def self._members

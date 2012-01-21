@@ -18,8 +18,14 @@ describe PopulatesCache do
   }
 
   before do
+    OcrbOrganization.stubs(:next_meetup).returns("next_meetup_result")
     OcrbOrganization.stubs(:members).returns("members_results")
     OcrbOrganization.stubs(:repos).returns("repos_results")
+  end
+
+  it "writes the next meetup result to the cache" do
+    cache.expects(:set).with("next_meetup", "next_meetup_result", :expires_in => PopulatesCache::EXPIRES_IN)
+    PopulatesCache.set(cache)
   end
 
   it "writes the members results to the cache" do
@@ -33,6 +39,6 @@ describe PopulatesCache do
   end
 
   it "returns a collection of the written results" do
-    assert_equal %w[members_results repos_results], PopulatesCache.set(cache)
+    assert_equal %w[next_meetup_result members_results repos_results], PopulatesCache.set(cache)
   end
 end

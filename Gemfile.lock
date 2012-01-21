@@ -62,6 +62,7 @@ GEM
       diff-lcs (~> 1.1)
       mime-types (~> 1.15)
     haml (3.1.2)
+    hashie (1.1.0)
     http_router (0.8.10)
       rack (>= 1.0.0)
       url_mount (~> 0.2.1)
@@ -133,6 +134,7 @@ DEPENDENCIES
   faker
   fakeweb
   haml
+  hashie (~> 1.1.0)
   httparty
   machinist
   machinist_mongo

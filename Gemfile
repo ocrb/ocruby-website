@@ -17,6 +17,7 @@ gem 'bson_ext', :require => "mongo"
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'httparty'
 gem 'dalli'
+gem 'hashie', '~> 1.1.0'
 
 # Test requirements
 

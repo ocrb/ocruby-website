@@ -64,6 +64,10 @@ class Web < Padrino::Application
   #
 
   get "/" do
+    @next_meetup = cache(PopulatesCache::NEXT_MEETUP_KEY, :expires_in => PopulatesCache::EXPIRES_IN) do
+      OcrbOrganization.next_meetup
+    end
+
     @members = cache(PopulatesCache::MEMBERS_KEY, :expires_in => PopulatesCache::EXPIRES_IN) do
       OcrbOrganization.members
     end
