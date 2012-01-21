@@ -172,6 +172,21 @@ textarea.email-message  {
 }
 
 /* Target container to overrule twitter js */
+.container #twtr-widget-1 .twtr-doc,
+.container #twtr-widget-1 .twtr-hd a,
+.container #twtr-widget-1 h3,
+.container #twtr-widget-1 h4 {
+  color: #404040 !important;
+}
+
+.container #twtr-widget-1 .twtr-ft a {
+  color: #333 !important;
+}
+
+.container .twtr-doc {
+  border: 1px solid #DDD;
+}
+
 .container .twtr-doc, .container .twtr-timeline {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
