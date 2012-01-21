@@ -179,11 +179,13 @@ textarea.email-message  {
 
 .person .avatar img {
   width: 40px;
+  padding: 2px;
+  border: 1px solid #DDD;
 }
 
 .person a.profile-url {
   position: relative;
-  bottom: 15px;
+  bottom: 17px;
   padding-left: 15px;
 }
 
