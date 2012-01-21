@@ -78,6 +78,11 @@ div#tribar {
   margin-bottom: 15px;
 }
 
+div#tribar a {
+  color: #333;
+  font-weight: bold;
+}
+
 div#tribar h6, div#tribar p {
   text-align: center;
 }
