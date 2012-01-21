@@ -1,5 +1,7 @@
 Web.helpers do
   def meetup_summary(meetup)
-    "#{meetup.name} @ #{meetup.venue && meetup.venue.name}" if meetup
+    if meetup
+      link_to "#{meetup.name} @ #{meetup.venue && meetup.venue.name}", meetup.event_url
+    end
   end
 end
