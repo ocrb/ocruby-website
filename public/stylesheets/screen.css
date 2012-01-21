@@ -121,6 +121,8 @@ div#tribar div.columns:last-child {
 
 .topbar .secondary-nav li a {
   background-color: #333333;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
   border-radius: 5px;
   line-height: 0;
   border: 1px solid #404040;
