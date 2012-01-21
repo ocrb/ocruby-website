@@ -21,19 +21,9 @@
               %a#people{:href => "#"} People
             %li
               %a#projects{:href => "#"} Projects
-
-    #masthead
-      .inner
-        .container
-          %h1 OCRuby Brigade
-          %p.lead
-            Home of the Orange County Ruby Brigade.
-            %br
-            Come join us for our monthly meetings and weekly hackfests @
-            = link_to 'Kajabi', 'http://www.kajabiapp.com/'
-          %p
-            %strong Next Meetup:
-            = meetup_summary(@next_meetup)
+          %ul.nav.secondary-nav
+            %li
+              = meetup_summary(@next_meetup)
 
     = yield
 
