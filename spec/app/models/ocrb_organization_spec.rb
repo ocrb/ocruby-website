@@ -20,6 +20,113 @@ describe OcrbOrganization do
     ]'
   end
 
+  def raw_user_repos_fixture
+    '[
+      {
+        "clone_url": "https://github.com/justinbeltran/ruby_koans.git",
+        "open_issues": 0,
+        "watchers": 1,
+        "pushed_at": "2011-09-10T15:44:36Z",
+        "homepage": "",
+        "updated_at": "2011-10-04T18:33:10Z",
+        "git_url": "git://github.com/justinbeltran/ruby_koans.git",
+        "fork": false,
+        "has_downloads": true,
+        "html_url": "https://github.com/justinbeltran/ruby_koans",
+        "has_issues": true,
+        "language": "Ruby",
+        "master_branch": null,
+        "private": false,
+        "forks": 1,
+        "size": 216,
+        "url": "https://api.github.com/repos/justinbeltran/ruby_koans",
+        "svn_url": "https://github.com/justinbeltran/ruby_koans",
+        "created_at": "2011-08-27T16:34:35Z",
+        "owner": {
+          "gravatar_id": "6519acd2ab9d9122cef08a7b346892ad",
+          "login": "justinbeltran",
+          "url": "https://api.github.com/users/justinbeltran",
+          "avatar_url": "https://secure.gravatar.com/avatar/6519acd2ab9d9122cef08a7b346892ad?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+          "id": 6282
+        },
+        "name": "ruby_koans",
+        "has_wiki": true,
+        "id": 2279894,
+        "ssh_url": "git@github.com:justinbeltran/ruby_koans.git",
+        "description": "",
+        "mirror_url": null
+      },
+      {
+        "clone_url": "https://github.com/justinbeltran/dotfiles.git",
+        "open_issues": 0,
+        "watchers": 1,
+        "pushed_at": "2011-08-24T17:04:16Z",
+        "homepage": "",
+        "updated_at": "2011-10-04T19:04:08Z",
+        "git_url": "git://github.com/justinbeltran/dotfiles.git",
+        "fork": true,
+        "has_downloads": true,
+        "html_url": "https://github.com/justinbeltran/dotfiles",
+        "has_issues": false,
+        "language": "Ruby",
+        "master_branch": null,
+        "private": false,
+        "forks": 0,
+        "size": 220,
+        "url": "https://api.github.com/repos/justinbeltran/dotfiles",
+        "svn_url": "https://github.com/justinbeltran/dotfiles",
+        "created_at": "2011-09-09T03:51:25Z",
+        "owner": {
+          "gravatar_id": "6519acd2ab9d9122cef08a7b346892ad",
+          "login": "justinbeltran",
+          "url": "https://api.github.com/users/justinbeltran",
+          "avatar_url": "https://secure.gravatar.com/avatar/6519acd2ab9d9122cef08a7b346892ad?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+          "id": 6282
+        },
+        "name": "dotfiles",
+        "has_wiki": true,
+        "id": 2353260,
+        "ssh_url": "git@github.com:justinbeltran/dotfiles.git",
+        "description": "My dot files yo",
+        "mirror_url": null
+      },
+      {
+        "clone_url": "https://github.com/justinbeltran/yelpr.git",
+        "open_issues": 0,
+        "watchers": 2,
+        "pushed_at": "2012-02-27T01:18:28Z",
+        "homepage": "",
+        "updated_at": "2012-02-27T01:18:30Z",
+        "git_url": "git://github.com/justinbeltran/yelpr.git",
+        "fork": false,
+        "has_downloads": true,
+        "html_url": "https://github.com/justinbeltran/yelpr",
+        "has_issues": true,
+        "language": "Ruby",
+        "master_branch": null,
+        "private": false,
+        "forks": 1,
+        "size": 348,
+        "url": "https://api.github.com/repos/justinbeltran/yelpr",
+        "svn_url": "https://github.com/justinbeltran/yelpr",
+        "created_at": "2011-11-05T16:24:19Z",
+        "owner": {
+          "gravatar_id": "6519acd2ab9d9122cef08a7b346892ad",
+          "login": "justinbeltran",
+          "url": "https://api.github.com/users/justinbeltran",
+          "avatar_url": "https://secure.gravatar.com/avatar/6519acd2ab9d9122cef08a7b346892ad?d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-140.png",
+          "id": 6282
+        },
+        "name": "yelpr",
+        "has_wiki": true,
+        "id": 2715987,
+        "ssh_url": "git@github.com:justinbeltran/yelpr.git",
+        "description": "Ruby Yelp gem for the masses",
+        "mirror_url": null
+      }
+    ]'
+  end
+
   def raw_repos_fixture
     '[
       {
@@ -133,6 +240,25 @@ describe OcrbOrganization do
     it "can fetch the repos on github" do
       assert_equal "ocruby-website", subject[0].name
       assert_equal "cinch-bot", subject[1].name
+    end
+  end
+
+  describe "user_repos" do
+    let(:subject) { OcrbOrganization.user_repos }
+
+    before do
+      OcrbOrganization.expects(:members).returns([OcrbOrganization::Member.new('login' => 'justinbeltran')])
+      FakeWeb.register_uri(:get, "https://api.github.com/users/justinbeltran/repos?per_page=100", :body => raw_user_repos_fixture,
+                           :status => ["200"], "Content-Type" => "application/json")
+    end
+
+    after do
+      FakeWeb.clean_registry
+    end
+
+    it "can fetch the repos on github" do
+      assert_equal "ruby_koans", subject[0].name
+      assert_equal "dotfiles", subject[1].name
     end
   end
 end

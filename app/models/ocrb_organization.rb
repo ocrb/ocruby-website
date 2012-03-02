@@ -13,6 +13,8 @@ class OcrbOrganization
 
   class Repo < OpenStruct; end
 
+  class Project < OpenStruct; end
+
   base_uri 'https://api.github.com'
 
   ORG_NAME = 'ocrb'
@@ -27,6 +29,12 @@ class OcrbOrganization
     _repos.map do |repo|
       Repo.new(repo)
     end.reject(&:fork)
+  end
+
+  def self.user_repos
+    self.members.map do |member|
+      _projects(member.login).map { |p| Project.new p if p['language'] == "Ruby" }.compact
+    end.flatten
   end
 
   class Meetup < Hashie::Mash
@@ -50,5 +58,9 @@ class OcrbOrganization
 
   def self._repos
     get("/users/#{ORG_NAME}/repos?per_page=100")
+  end
+
+  def self._projects(username)
+    get("/users/#{username}/repos?per_page=100")
   end
 end

@@ -37,7 +37,7 @@ class Web < Padrino::Application
     end
 
     @repos = cache(PopulatesCache::REPOS_KEY, :expires_in => PopulatesCache::EXPIRES_IN) do
-      OcrbOrganization.repos
+      OcrbOrganization.repos + OcrbOrganization.user_repos
     end
 
     render :index
