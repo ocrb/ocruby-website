@@ -258,7 +258,8 @@ describe OcrbOrganization do
 
     it "can fetch the repos on github" do
       assert_equal "ruby_koans", subject[0].name
-      assert_equal "dotfiles", subject[1].name
+      assert_equal "yelpr",      subject[1].name
+      assert_equal 2,            subject.size
     end
   end
 end

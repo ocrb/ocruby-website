@@ -33,7 +33,7 @@ class OcrbOrganization
 
   def self.user_repos
     self.members.map do |member|
-      _projects(member.login).map { |p| Project.new p if p['language'] == "Ruby" }.compact
+      _projects(member.login).map { |p| Project.new p if p['language'] == "Ruby" && !(p['fork'])}.compact
     end.flatten
   end
 
